@@ -4,14 +4,46 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.interesting.administrator.interesting.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/radioGroup">
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:background="#ededed"
+        android:padding="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radio0"
+            android:checked="true"
+            android:tag="0"
+            style="@style/bottom_tag_style"
+            android:drawableTop="@drawable/tab_discover"
+            android:text="首页"
+            />
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:tag="1"
+            style="@style/bottom_tag_style"
+            android:drawableTop="@drawable/tab_video"
+            android:text="视频"/>
+
+        <RadioButton
+            android:id="@+id/radio2"
+            style="@style/bottom_tag_style"
+            android:tag="2"
+            android:drawableTop="@drawable/tab_user"
+            android:text="我的"/>
+
+    </RadioGroup>
 </RelativeLayout>
