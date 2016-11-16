@@ -2,6 +2,7 @@ package com.interesting.administrator.interesting.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.interesting.administrator.interesting.ContentActivity;
 import com.interesting.administrator.interesting.OkHttpUtils;
 import com.interesting.administrator.interesting.R;
 import com.interesting.administrator.interesting.bean.VideoBean;
@@ -138,13 +140,21 @@ public class VideoListFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
 
             MyHolder1 holder1 = (MyHolder1) holder;
+            holder1.rootView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), ContentActivity.class);
+                    intent.putExtra("url",list.get(position).getUrl());
+                    startActivity(intent);
+                }
+            });
             if (list.get(position).getTips().equals("视频")) {
                 Glide.with(context).load(list.get(position).getCover().get(0)).into(holder1.ivItem);
                 holder1.tvTitle.setText(list.get(position).getTitle());
-                holder1.tvComment.setText(list.get(position).getShow_time()+"次播放");
+                holder1.tvComment.setText(list.get(position).getRead_count()+"次播放");
             } else {
                 holder1.tvComment.setText(list.get(position).getTips());
             }

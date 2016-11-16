@@ -2,6 +2,7 @@ package com.interesting.administrator.interesting.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.interesting.administrator.interesting.ContentActivity;
 import com.interesting.administrator.interesting.OkHttpUtils;
 import com.interesting.administrator.interesting.R;
 import com.interesting.administrator.interesting.bean.HomeBean;
@@ -143,9 +145,17 @@ public class HomeListFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
             if (getItemViewType(position) == 1) {
                 MyHolder1 holder1 = (MyHolder1) holder;
+                holder1.rootView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getActivity(), ContentActivity.class);
+                        intent.putExtra("url",list.get(position).getUrl());
+                        startActivity(intent);
+                    }
+                });
                 if (list.get(position).getTips().equals("")) {
                     Glide.with(context).load(list.get(position).getCover().get(0)).into(holder1.ivItem);
                     holder1.tvTitle.setText(list.get(position).getTitle());
@@ -153,12 +163,21 @@ public class HomeListFragment extends Fragment {
                     SimpleDateFormat format = new SimpleDateFormat("yy.MM.dd HH:mm:ss");
                     Date date = new Date(Long.parseLong(list.get(position).getPublish_time()));
                     holder1.tvTime.setText(format.format(date));
+
                 } else {
                     holder1.tvComment.setText(list.get(position).getTips());
                 }
 
             } else if (getItemViewType(position) == 3) {
                 MyHolder3 holder3 = (MyHolder3) holder;
+                holder3.rootView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getActivity(), ContentActivity.class);
+                        intent.putExtra("url",list.get(position).getUrl());
+                        startActivity(intent);
+                    }
+                });
                 if (list.get(position).getTips().equals("")) {
                     Glide.with(context).load(list.get(position).getCover().get(0)).into(holder3.ivItem);
                     Glide.with(context).load(list.get(position).getCover().get(1)).into(holder3.ivItem1);
@@ -216,6 +235,7 @@ public class HomeListFragment extends Fragment {
                 this.ivMessage = (ImageView) rootView.findViewById(R.id.iv_message);
                 this.tvComment = (TextView) rootView.findViewById(R.id.tv_comment);
                 this.tvTime = (TextView) rootView.findViewById(R.id.tv_time);
+
             }
 
         }

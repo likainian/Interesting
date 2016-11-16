@@ -8,6 +8,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.interesting.administrator.interesting.fragment.HomeFragment;
+import com.interesting.administrator.interesting.fragment.MineFragment;
 import com.interesting.administrator.interesting.fragment.VideoFragment;
 
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private void initFragment() {
         list.add(HomeFragment.newInstance());
         list.add(VideoFragment.newInstance());
-        list.add(VideoFragment.newInstance());
+        list.add(MineFragment.newInstance());
         getSupportFragmentManager().beginTransaction().add(R.id.frame,list.get(0)).commit();
     }
 
