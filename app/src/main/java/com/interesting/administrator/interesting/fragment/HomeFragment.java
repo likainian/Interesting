@@ -2,14 +2,17 @@ package com.interesting.administrator.interesting.fragment;
 
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 
 import com.interesting.administrator.interesting.BaseUrl;
 import com.interesting.administrator.interesting.OkHttpUtils;
@@ -24,8 +27,15 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment {
     private Context context;
     private TabLayout mTabHome;
-    private FrameLayout mFrameHome;
-    ArrayList<HomeTitle.DataBean> homeTitleList = new ArrayList<>();
+    private ViewPager mPagerHome;
+    private ArrayList<HomeTitle.DataBean> homeTitleList = new ArrayList<>();
+    private ArrayList<Fragment> fragList = new ArrayList<>();
+    private MyAdapter adapter;
+    private String[] homeUrls = {BaseUrl.hometuijianUrl,BaseUrl.homeshehuiUrl,BaseUrl.homegaoxiaoUrl,
+            BaseUrl.homeqiwenUrl,BaseUrl.homelizhiUrl,BaseUrl.homeyangshengUrl,BaseUrl.homeyuleUrl,
+            BaseUrl.homekejiUrl,BaseUrl.homebaikeUrl,BaseUrl.homeqicheUrl,BaseUrl.homecaijingUrl,
+            BaseUrl.homeqingganUrl,BaseUrl.homemeishiUrl,BaseUrl.hometiyuUrl,BaseUrl.homeshishangUrl,
+            BaseUrl.homejunshiUrl,BaseUrl.homelvyouUrl,BaseUrl.homeyuerUrl,BaseUrl.homexingzuoUrl};
 
     public HomeFragment() {
         // Required empty public constructor
@@ -51,15 +61,19 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mTabHome = (TabLayout) view.findViewById(R.id.tab_home);
-        mFrameHome = (FrameLayout) view.findViewById(R.id.frame_home);
+        mTabHome = (TabLayout) view.findViewById(R.id.tab_video);
+        mPagerHome = (ViewPager) view.findViewById(R.id.pager_video);
+        mTabHome.setTabMode(TabLayout.MODE_SCROLLABLE);
+        mTabHome.setSelectedTabIndicatorColor(getResources().getColor(R.color.base));
+        mTabHome.setTabTextColors(Color.BLACK,getResources().getColor(R.color.base));
         initData();
         initAdapter();
     }
 
     private void initAdapter() {
-
-
+        adapter = new MyAdapter(getChildFragmentManager());
+        mPagerHome.setAdapter(adapter);
+        mTabHome.setupWithViewPager(mPagerHome);
     }
 
     private void initData() {
@@ -69,7 +83,33 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void getText(HomeTitle homeTitle) {
                         homeTitleList.addAll(homeTitle.getData());
+                        for (int i = 0; i < homeTitleList.size(); i++) {
+                            fragList.add(HomeListFragment.newInstance(homeUrls[i]));
+                        }
+                        adapter.notifyDataSetChanged();
                     }
                 });
     }
+    class MyAdapter extends FragmentPagerAdapter{
+
+        public MyAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return fragList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return homeTitleList.size();
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return homeTitleList.get(position).getName();
+        }
+    }
+
 }

@@ -16,5 +16,8 @@
         <item name="android:gravity">center</item>
         <item name="android:textColor">@drawable/bottom_text_color_selector</item>
     </style>
+    <style name="MyTab" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">15sp</item>
+    </style>
 
 </resources>
