@@ -1,4 +1,4 @@
-package com.interesting.administrator.interesting;
+package com.interesting.administrator.interesting.utils;
 
 /**
  * Created by Administrator on 16/11/15.

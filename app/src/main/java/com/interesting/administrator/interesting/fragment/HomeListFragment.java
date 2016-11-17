@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.interesting.administrator.interesting.ContentActivity;
-import com.interesting.administrator.interesting.OkHttpUtils;
+import com.interesting.administrator.interesting.utils.OkHttpUtils;
 import com.interesting.administrator.interesting.R;
 import com.interesting.administrator.interesting.bean.HomeBean;
 

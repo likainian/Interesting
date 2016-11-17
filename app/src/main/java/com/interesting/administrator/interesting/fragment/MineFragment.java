@@ -1,27 +1,14 @@
 package com.interesting.administrator.interesting.fragment;
 
 
-import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.interesting.administrator.interesting.BaseUrl;
-import com.interesting.administrator.interesting.OkHttpUtils;
 import com.interesting.administrator.interesting.R;
-import com.interesting.administrator.interesting.bean.HomeTitle;
-
-import java.util.ArrayList;
-
-import static com.interesting.administrator.interesting.BaseUrl.homeUrls;
 
 /**
  * A simple {@link Fragment} subclass.

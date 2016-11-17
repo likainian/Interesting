@@ -14,8 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.interesting.administrator.interesting.BaseUrl;
-import com.interesting.administrator.interesting.OkHttpUtils;
+import com.interesting.administrator.interesting.utils.BaseUrl;
+import com.interesting.administrator.interesting.utils.OkHttpUtils;
 import com.interesting.administrator.interesting.R;
 import com.interesting.administrator.interesting.bean.HomeTitle;
 

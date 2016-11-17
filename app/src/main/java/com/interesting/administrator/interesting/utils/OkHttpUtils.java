@@ -1,4 +1,4 @@
-package com.interesting.administrator.interesting;
+package com.interesting.administrator.interesting.utils;
 
 import android.app.Activity;
 
