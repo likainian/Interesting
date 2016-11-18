@@ -36,7 +36,7 @@
     <ImageView
         android:layout_margin="5dp"
         android:id="@+id/iv_star"
-        android:src="@drawable/star"
+        android:src="@drawable/dark_star"
         android:layout_below="@+id/iv_item"
         android:layout_toLeftOf="@+id/iv_share"
         android:layout_width="wrap_content"

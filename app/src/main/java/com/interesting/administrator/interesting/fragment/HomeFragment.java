@@ -2,6 +2,7 @@ package com.interesting.administrator.interesting.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,7 +14,9 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import com.interesting.administrator.interesting.activity.SortActivity;
 import com.interesting.administrator.interesting.utils.BaseUrl;
 import com.interesting.administrator.interesting.utils.OkHttpUtils;
 import com.interesting.administrator.interesting.R;
@@ -28,6 +31,7 @@ public class HomeFragment extends Fragment {
     private Context context;
     private TabLayout mTabHome;
     private ViewPager mPagerHome;
+    private ImageView mIvChange;
     private ArrayList<HomeTitle.DataBean> homeTitleList = new ArrayList<>();
     private ArrayList<Fragment> fragList = new ArrayList<>();
     private MyAdapter adapter;
@@ -63,6 +67,13 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mTabHome = (TabLayout) view.findViewById(R.id.tab_video);
         mPagerHome = (ViewPager) view.findViewById(R.id.pager_video);
+        mIvChange = (ImageView) view.findViewById(R.id.iv_change);
+        mIvChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), SortActivity.class));
+            }
+        });
         mTabHome.setTabMode(TabLayout.MODE_SCROLLABLE);
         mTabHome.setSelectedTabIndicatorColor(getResources().getColor(R.color.base));
         mTabHome.setTabTextColors(Color.BLACK,getResources().getColor(R.color.base));

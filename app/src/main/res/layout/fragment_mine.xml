@@ -1,13 +1,209 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.interesting.administrator.interesting.fragment.MineFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="我的" />
+   <LinearLayout
+       android:background="#f2f2f2"
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <RelativeLayout
+           android:background="@color/darkBlack"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <Button
+               android:layout_marginTop="30dp"
+               android:id="@+id/bt_message"
+               android:background="@drawable/bt_message"
+               android:layout_width="60dp"
+               android:layout_height="30dp" />
+           <Button
+               android:layout_marginTop="30dp"
+               android:layout_alignParentRight="true"
+               android:background="@drawable/seting"
+               android:layout_width="60dp"
+               android:layout_height="30dp" />
+           <ImageView
+               android:id="@+id/iv_head"
+               android:layout_marginTop="100dp"
+               android:layout_centerHorizontal="true"
+               android:src="@drawable/head"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+           <TextView
+               android:text="趣友1417418471"
+               android:layout_margin="5dp"
+               android:id="@+id/tv_head"
+               android:layout_below="@+id/iv_head"
+               android:textColor="@color/white"
+               android:layout_centerHorizontal="true"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+           <LinearLayout
+               android:layout_centerHorizontal="true"
+               android:layout_below="@+id/tv_head"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content">
+               <TextView
+                   android:text=" 金币：0"
+                   android:gravity="center"
+                   android:layout_marginRight="50dp"
+                   android:drawableLeft="@drawable/money"
+                   android:textColor="@color/white"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" />
+               <TextView
+                   android:text=" 零钱：0"
+                   android:gravity="center"
+                   android:layout_below="@+id/tv_head"
+                   android:drawableLeft="@drawable/mon"
+                   android:textColor="@color/white"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" />
+           </LinearLayout>
 
-</FrameLayout>
+       </RelativeLayout>
+       <include layout="@layout/item_button"/>
+       <com.interesting.administrator.interesting.MyViewGroup
+           app:image="@drawable/man"
+           android:layout_marginTop="10dp"
+           android:clickable="true"
+           android:background="@drawable/but_selector"
+           app:title="新手任务"
+           app:content="最高可获得7500万金币"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+       </com.interesting.administrator.interesting.MyViewGroup>
+       <View
+           android:background="@color/ground"
+           android:layout_width="match_parent"
+           android:layout_height="1dp"/>
+       <com.interesting.administrator.interesting.MyViewGroup
+           app:image="@drawable/num"
+           android:clickable="true"
+           android:background="@drawable/but_selector"
+           app:title="输入邀请码"
+           app:content="再领取0.5元红包"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+       </com.interesting.administrator.interesting.MyViewGroup>
+       <View
+           android:padding="50dp"
+           android:background="@color/ground"
+           android:layout_width="match_parent"
+           android:layout_height="1dp"/>
+       <com.interesting.administrator.interesting.MyViewGroup
+           app:image="@drawable/mess"
+           android:clickable="true"
+           android:background="@drawable/but_selector"
+           app:title="绑定微信"
+           app:content="首次绑定+300金币"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+       </com.interesting.administrator.interesting.MyViewGroup>
+       <com.interesting.administrator.interesting.MyViewGroup
+           app:image="@drawable/self"
+           android:layout_marginTop="10dp"
+           android:clickable="true"
+           android:background="@drawable/but_selector"
+           app:title="任务系统"
+           app:content="签到领金币，拆宝箱"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+       </com.interesting.administrator.interesting.MyViewGroup>
+       <View
+           android:background="@color/ground"
+           android:layout_width="match_parent"
+           android:layout_height="1dp"/>
+       <com.interesting.administrator.interesting.MyViewGroup
+           app:image="@drawable/mone_y"
+           android:clickable="true"
+           android:background="@drawable/but_selector"
+           app:title="收入明细"
+           app:content="看看昨天赚了多少"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+       </com.interesting.administrator.interesting.MyViewGroup>
+       <View
+           android:padding="50dp"
+           android:background="@color/ground"
+           android:layout_width="match_parent"
+           android:layout_height="1dp"/>
+       <com.interesting.administrator.interesting.MyViewGroup
+           app:image="@drawable/order"
+           android:clickable="true"
+           android:background="@drawable/but_selector"
+           app:title="收入排行"
+           app:content="哪位趣友更给力"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+       </com.interesting.administrator.interesting.MyViewGroup>
+       <View
+           android:padding="50dp"
+           android:background="@color/ground"
+           android:layout_width="match_parent"
+           android:layout_height="1dp"/>
+       <com.interesting.administrator.interesting.MyViewGroup
+           app:image="@drawable/game"
+           android:clickable="true"
+           android:background="@drawable/but_selector"
+           app:title="游戏中心"
+           app:content="玩游戏赢大奖"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+       </com.interesting.administrator.interesting.MyViewGroup>
+       <com.interesting.administrator.interesting.MyViewGroup
+           app:image="@drawable/mone"
+           android:clickable="true"
+           android:layout_marginTop="10dp"
+           android:background="@drawable/but_selector"
+           app:title="兑换/提现"
+           app:content="零钱提现、兑换"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+       </com.interesting.administrator.interesting.MyViewGroup>
+       <View
+           android:padding="50dp"
+           android:background="@color/ground"
+           android:layout_width="match_parent"
+           android:layout_height="1dp"/>
+       <com.interesting.administrator.interesting.MyViewGroup
+           app:image="@drawable/question"
+           android:clickable="true"
+           android:background="@drawable/but_selector"
+           app:title="趣学堂"
+           app:content="视频教程、常见问题"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+       </com.interesting.administrator.interesting.MyViewGroup>
+       <Button
+           android:text=" 我的收藏"
+           android:padding="5dp"
+           android:gravity="left|center_vertical"
+           android:drawableLeft="@drawable/star"
+           android:layout_marginTop="10dp"
+           android:background="@drawable/but_selector"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" />
+       <View
+           android:padding="50dp"
+           android:background="@color/ground"
+           android:layout_width="match_parent"
+           android:layout_height="1dp"/>
+       <Button
+           android:text=" 历史记录"
+           android:padding="5dp"
+           android:gravity="left|center_vertical"
+           android:drawableLeft="@drawable/star"
+           android:background="@drawable/but_selector"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" />
+
+   </LinearLayout>
+
+
+</ScrollView>

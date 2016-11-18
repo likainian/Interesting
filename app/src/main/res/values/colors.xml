@@ -8,4 +8,9 @@
     <color name="white">#ffffff</color>
     <color name="ground">#eeeeee</color>
     <color name="base">#57d02b</color>
+    <color name="black">#000000</color>
+    <color name="darkBlack">#21212b</color>
+    <color name="bar">#9aef7b</color>
+    <color name="red">#ff0000</color>
+    <color name="orange">#ff8d1c</color>
 </resources>

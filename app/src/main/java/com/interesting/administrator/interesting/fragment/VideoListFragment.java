@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.interesting.administrator.interesting.ContentActivity;
+import com.interesting.administrator.interesting.activity.ContentActivity;
 import com.interesting.administrator.interesting.utils.OkHttpUtils;
 import com.interesting.administrator.interesting.R;
 import com.interesting.administrator.interesting.bean.VideoBean;
@@ -87,7 +87,7 @@ public class VideoListFragment extends Fragment {
                 super.onScrollStateChanged(recyclerView, newState);
                 mSwipeRefresh.setColorSchemeColors(Color.RED, Color.GREEN, Color.BLUE);
                 if (newState == RecyclerView.SCROLL_STATE_IDLE && lastVisitable + 1 == adapter.getItemCount()) {
-                    pager++;
+                    ++pager;
                     initData();
                     adapter.notifyDataSetChanged();
                 }

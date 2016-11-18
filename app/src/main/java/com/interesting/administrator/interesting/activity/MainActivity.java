@@ -1,4 +1,4 @@
-package com.interesting.administrator.interesting;
+package com.interesting.administrator.interesting.activity;
 
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.interesting.administrator.interesting.R;
 import com.interesting.administrator.interesting.fragment.HomeFragment;
 import com.interesting.administrator.interesting.fragment.MineFragment;
 import com.interesting.administrator.interesting.fragment.VideoFragment;
