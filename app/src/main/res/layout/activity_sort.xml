@@ -2,11 +2,65 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_sort"
+    android:background="@color/ground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.interesting.administrator.interesting.activity.SortActivity">
-    <TextView
-        android:text="sort"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="我的频道"
+            android:layout_margin="5dp"
+            android:textSize="25sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="编辑"
+            android:textSize="20sp"
+            android:id="@+id/bt_edit"
+            android:layout_margin="5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/shape_button"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.interesting.administrator.interesting.MyGridView
+            android:id="@+id/gv_had"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/bt_edit"
+            android:layout_margin="10dp"
+            android:numColumns="4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.interesting.administrator.interesting.MyGridView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/rl"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="点击添加"
+            android:id="@+id/tv_add"
+            android:textSize="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <GridView
+            android:id="@+id/gv_add"
+            android:numColumns="4"
+            android:layout_below="@+id/tv_add"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </GridView>
+    </RelativeLayout>
+
+
 </RelativeLayout>
