@@ -22,6 +22,7 @@
                android:layout_width="60dp"
                android:layout_height="30dp" />
            <Button
+               android:id="@+id/bt_setting"
                android:layout_marginTop="30dp"
                android:layout_alignParentRight="true"
                android:background="@drawable/seting"
@@ -49,6 +50,7 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content">
                <TextView
+                   android:id="@+id/tv_gold"
                    android:text=" 金币：0"
                    android:gravity="center"
                    android:layout_marginRight="50dp"
@@ -57,6 +59,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content" />
                <TextView
+                   android:id="@+id/tv_change"
                    android:text=" 零钱：0"
                    android:gravity="center"
                    android:layout_below="@+id/tv_head"
@@ -70,6 +73,7 @@
        <include layout="@layout/item_button"/>
        <com.interesting.administrator.interesting.MyViewGroup
            app:image="@drawable/man"
+           android:id="@+id/bt_newbie"
            android:layout_marginTop="10dp"
            android:clickable="true"
            android:background="@drawable/but_selector"
@@ -84,6 +88,7 @@
            android:layout_height="1dp"/>
        <com.interesting.administrator.interesting.MyViewGroup
            app:image="@drawable/num"
+           android:id="@+id/bt_code"
            android:clickable="true"
            android:background="@drawable/but_selector"
            app:title="输入邀请码"
@@ -98,6 +103,7 @@
            android:layout_height="1dp"/>
        <com.interesting.administrator.interesting.MyViewGroup
            app:image="@drawable/mess"
+           android:id="@+id/bt_chat"
            android:clickable="true"
            android:background="@drawable/but_selector"
            app:title="绑定微信"
@@ -107,6 +113,7 @@
        </com.interesting.administrator.interesting.MyViewGroup>
        <com.interesting.administrator.interesting.MyViewGroup
            app:image="@drawable/self"
+           android:id="@+id/bt_task"
            android:layout_marginTop="10dp"
            android:clickable="true"
            android:background="@drawable/but_selector"
@@ -122,6 +129,7 @@
        <com.interesting.administrator.interesting.MyViewGroup
            app:image="@drawable/mone_y"
            android:clickable="true"
+           android:id="@+id/bt_balance"
            android:background="@drawable/but_selector"
            app:title="收入明细"
            app:content="看看昨天赚了多少"
@@ -136,6 +144,7 @@
        <com.interesting.administrator.interesting.MyViewGroup
            app:image="@drawable/order"
            android:clickable="true"
+           android:id="@+id/bt_order"
            android:background="@drawable/but_selector"
            app:title="收入排行"
            app:content="哪位趣友更给力"
@@ -149,6 +158,7 @@
            android:layout_height="1dp"/>
        <com.interesting.administrator.interesting.MyViewGroup
            app:image="@drawable/game"
+           android:id="@+id/bt_game"
            android:clickable="true"
            android:background="@drawable/but_selector"
            app:title="游戏中心"
@@ -158,6 +168,7 @@
        </com.interesting.administrator.interesting.MyViewGroup>
        <com.interesting.administrator.interesting.MyViewGroup
            app:image="@drawable/mone"
+           android:id="@+id/bt_exchange"
            android:clickable="true"
            android:layout_marginTop="10dp"
            android:background="@drawable/but_selector"
@@ -174,6 +185,7 @@
        <com.interesting.administrator.interesting.MyViewGroup
            app:image="@drawable/question"
            android:clickable="true"
+           android:id="@+id/bt_learn"
            android:background="@drawable/but_selector"
            app:title="趣学堂"
            app:content="视频教程、常见问题"
@@ -181,6 +193,7 @@
            android:layout_height="wrap_content">
        </com.interesting.administrator.interesting.MyViewGroup>
        <Button
+           android:id="@+id/bt_collect"
            android:text=" 我的收藏"
            android:padding="5dp"
            android:gravity="left|center_vertical"
@@ -195,6 +208,7 @@
            android:layout_width="match_parent"
            android:layout_height="1dp"/>
        <Button
+           android:id="@+id/bt_history"
            android:text=" 历史记录"
            android:padding="5dp"
            android:gravity="left|center_vertical"
